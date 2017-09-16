@@ -1,6 +1,8 @@
 CFLAGS=-Wall -g
 
-all:	ex1
+targets := $(wildcard *.c) 
+
+all:	ex1 ex3 ex7
 
 clean:
-	rm -f ex1
+	ls | grep -v "\." | grep -v Makefile | xargs rm

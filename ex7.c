@@ -39,7 +39,6 @@ int main()
 	int care_percentage = bugs * nul_byte;
 	printf("Which means you should care %d%%.\n", care_percentage);
 
-	printf("Nul byte: %s", nul_byte);
 
 	return 0;
 }
