@@ -49,5 +49,10 @@ int main(int argc, char *argv[])
 		printf("%s lived %d years so far.\n", *cur_name, *cur_age);
 	}
 
+	for (i = 0, cur_age=ages; i < count; i++) 
+	{
+		printf("%d has address %p.\n", cur_age[i], cur_age+i);
+	}
+
 	return 0;
 }
