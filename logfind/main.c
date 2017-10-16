@@ -3,12 +3,22 @@
 
 int main(int argc, char * argv[])
 {
-	check(argc>1, "USAGE: ./logfind -word ...");
+	//check(argc>1, "USAGE: ./logfind -word ...");
 
-	char **test =  get_filenames("lol.txt");
+	// Read $HOME environment variable
+	home = getenv("HOME");
+	check(home, "$HOME environment variable variable not set.")
 
-	free(test);
+	// Obtain list of files to check
+	char filenames[MAX_FILES][MAX_NAMELENGTH];
+	number_of_files = get_filenames(strcat(home,"/.logfind"), filenames);
+
+	// Print list of files to check
+	for(int i = 0; i< number_of_files; i++) {
+		log_info("FILE: %s", filenames[i]);
+	}
+
 	return 0;
 error:
-	return -1;
+	return 0;
 }
