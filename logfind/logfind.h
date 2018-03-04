@@ -10,9 +10,6 @@
 
 
 int get_filenames(char *path, char filenames[MAX_FILES][MAX_NAMELENGTH]);
-char *home;
-char filenames[MAX_FILES][MAX_NAMELENGTH];
-int number_of_files;
-
+int has_string(char *path, char *cmpstring);
 
 #endif

@@ -4,10 +4,10 @@ DEPS = logfind.h
 %.o: %.c %(DEPS)
 	$(CC) -c -o $@ $< $(CFLAGS)
 
-logfind: main.o get_filenames.o
-	$(CC) $(CFLAGS) -o logfind main.o get_filenames.o
+logfind: main.o get_filenames.o has_string.o
+	$(CC) $(CFLAGS) -o logfind main.o get_filenames.o has_string.o
 
 clean:
-	ls | grep -v ".c" | grep -v ".h" | grep -v ".txt" | grep -v Makefile | grep ".o"| xargs rm
+	$(RM) logfile *.o *~
 
 
